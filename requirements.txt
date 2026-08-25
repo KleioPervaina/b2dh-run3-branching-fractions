@@ -1,0 +1,11 @@
+# ROOT (with PyROOT and RooFit) is NOT pip-installable.
+# Use an LCG view or conda-forge:
+#   source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh
+#   conda install -c conda-forge root
+
+numpy>=1.24
+uproot>=5.0
+uncertainties>=3.1
+matplotlib>=3.7
+tqdm>=4.65
+jupyterlab>=4.0
