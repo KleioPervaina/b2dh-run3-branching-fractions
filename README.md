@@ -2,7 +2,7 @@
 
 Analysis code for an MMath/MPhys master's project at the University of Warwick, supervised by
 Dr Nicole Skidmore. Measures the CP-averaged branching fractions of two colour-favoured
-$b \to c\bar{u}q$ transitions using approximately 1 fb$^{-1}$ of LHCb Run 3 data
+$b \to c\bar{u}q$ transitions using approximately 1 fb⁻¹ of LHCb Run 3 data
 (Blocks 7–8, $\sqrt{s} = 13.6$ TeV, both magnet polarities).
 
 ## Result
@@ -15,9 +15,9 @@ $b \to c\bar{u}q$ transitions using approximately 1 fb$^{-1}$ of LHCb Run 3 data
 $$\mathcal{B}(D^+K^-)/\mathcal{B}(D^+\pi^-) = 0.0893 \pm 0.0007_{\text{stat}} \pm 0.0017_{\text{exp}} \pm 0.0040_{\text{ext}}$$
 
 The statistical uncertainty on the ratio is roughly a factor of two smaller than the most
-precise existing single measurement. Projected to the full 30 fb$^{-1}$ Run 3 dataset, the
+precise existing single measurement. Projected to the full 30 fb⁻¹ Run 3 dataset, the
 statistical precision on $\mathcal{B}(\bar{B}^0 \to D^+\pi^-)$ improves from
-$\sim$0.40% to $\sim$0.06%.
+about 0.40% to about 0.06%.
 
 ![Simultaneous fit](figures/fig5_simultaneous_fit.png)
 
@@ -25,7 +25,7 @@ $\sim$0.40% to $\sim$0.06%.
 
 Both channels proceed through a single tree-level diagram with strongly suppressed penguin and
 annihilation contributions, which makes them clean tests of QCD factorisation. Measurements
-have sat consistently below the SM/QCDF predictions — by 5–6$\sigma$ for $D^+K^-$ and 2–3$\sigma$
+have sat consistently below the SM/QCDF predictions — by 5–6σ for $D^+K^-$ and 2–3σ
 for $D^+\pi^-$ — a discrepancy known as the $b \to c\bar{u}q$ anomaly.
 
 Two choices shape the analysis:
@@ -62,7 +62,7 @@ explicitly rather than passed as objects, so each can be read on its own.
 
 Notebook 03 carries the analysis all the way through: selection, templates, the simultaneous
 fit, goodness of fit, a background-shape stability check, the publication figures, and finally
-the branching fractions and the 30 fb$^{-1}$ projection. Its closing sections need only
+the branching fractions and the 30 fb⁻¹ projection. Its closing sections need only
 `uncertainties` and `math`.
 
 `exploratory/` holds the working history: per-channel fits done before the simultaneous model,
@@ -90,7 +90,7 @@ bachelor-track efficiency ratios. Assigning the heavier kaon mass to a true pion
 reconstructed energy, so the $D^+\pi^- \to D^+K^-$ reflection sits *above* the $D^+K^-$ peak;
 the reverse reflection sits *below* the $D^+\pi^-$ peak.
 
-**$\Lambda_b^0$** — $\Lambda_b^0 \to \Lambda_c^+\pi^-$ enters the $D^+\pi^-$ sample when the
+**Λ⁰ᵦ background** — $\Lambda_b^0 \to \Lambda_c^+\pi^-$ enters the $D^+\pi^-$ sample when the
 proton is misidentified as a pion. Its shape is a `RooHistPdf` template built by re-massing
 control-sample candidates event by event, and its yield is Gaussian-constrained around the
 control-fit expectation rather than hard-fixed.
