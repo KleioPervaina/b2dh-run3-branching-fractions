@@ -49,21 +49,23 @@ floated freely.
 
 ```
 notebooks/
-  01_normalisation_fit_JpsiK.ipynb    B+ -> J/psi K+ fit; gives N_norm = 136071 +/- 428
-  02_lambdab_control_fit.ipynb        Lambda_b -> Lambda_c pi control fit
-  03_simultaneous_fit_Dpi_DK.ipynb    main result: simultaneous fit, then branching fractions
-exploratory/                          single-channel fits, misID study, early looks
-figures/                              publication figures
+  normalisation_fit_JpsiK.ipynb     B+ -> J/psi K+ fit; gives N_norm = 136071 +/- 428
+  lambdab_control_fit.ipynb         Lambda_b -> Lambda_c pi control fit
+  simultaneous_fit_Dpi_DK.ipynb     main result: simultaneous fit, then branching fractions
+exploratory/                        single-channel fits, misID study, early looks
+figures/                            publication figures
+docs/                               full write-up
 ```
 
-Run 01 → 02 → 03 in order. All three need ROOT, the custom PDF libraries and read access to
-the input tuples. The coupling between notebooks is the numeric yields, which are stated
-explicitly rather than passed as objects, so each can be read on its own.
+Read them in that order: the normalisation fit, then the Λ⁰ᵦ control fit, then the simultaneous
+fit. All three need ROOT, the custom PDF libraries and read access to the input tuples. The
+coupling between them is the numeric yields, which are stated explicitly rather than passed as
+objects, so each can be read on its own.
 
-Notebook 03 carries the analysis all the way through: selection, templates, the simultaneous
-fit, goodness of fit, a background-shape stability check, the publication figures, and finally
-the branching fractions and the 30 fb⁻¹ projection. Its closing sections need only
-`uncertainties` and `math`.
+`simultaneous_fit_Dpi_DK.ipynb` carries the analysis all the way through: selection, templates,
+the simultaneous fit, goodness of fit, a background-shape stability check, the publication
+figures, and finally the branching fractions and the 30 fb⁻¹ projection. Its closing sections
+need only `uncertainties` and `math`.
 
 `exploratory/` holds the working history: per-channel fits done before the simultaneous model,
 the misidentification template study, PDF-loading tests and first looks at the data. Kept
@@ -108,8 +110,8 @@ ROOT is not pip-installable; use an LCG view or conda-forge:
 source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh
 ```
 
-**Custom PDF libraries.** Notebook 03 loads three shared libraries that are not part of stock
-ROOT:
+**Custom PDF libraries.** The simultaneous fit notebook loads three shared libraries that are
+not part of stock ROOT:
 
 - `libRooHILLdini.so`, `libRooHORNSdini.so` — expected under `$HOME/roohill/standalone`
 - `libRooJohnsonSU_*.so` — expected under `$HOME/RooJohnsonBuild`
@@ -124,8 +126,8 @@ re-running anything.
 **A note on RooFit output.** Each main notebook opens with a cell that quietens the RooFit
 message service. Without it the fits emit thousands of INFO and Eval-topic lines — integrator
 setup, plot-projection ranges, and warnings raised while MIGRAD probes regions where a PDF
-evaluates negative. Those are normal minimiser behaviour, not failures: every fit in notebook
-03 reports `status=0`, `covQual=3`. WARNING, ERROR and FATAL are left switched on, so real
+evaluates negative. Those are normal minimiser behaviour, not failures: every fit in the
+simultaneous fit notebook reports `status=0`, `covQual=3`. WARNING, ERROR and FATAL are left switched on, so real
 problems still surface.
 
 ## Method reference
